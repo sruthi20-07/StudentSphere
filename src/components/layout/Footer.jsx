@@ -18,7 +18,7 @@ export default function Footer({ setActive }) {
   );
 
   return (
-    <footer className="bg-gray-900 text-white pt-14 pb-8">
+    <footer className="bg-gray-900 text-white pt-14 pb-8" role="contentinfo">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
           <div>
@@ -39,7 +39,7 @@ export default function Footer({ setActive }) {
           </div>
 
           <div>
-            <h4 className="font-bold mb-4 text-sm uppercase tracking-wider text-gray-300">Quick Links</h4>
+            <h2 className="font-bold mb-4 text-sm uppercase tracking-wider text-gray-300">Quick Links</h2>
             <div className="flex flex-col gap-2">
               {linkBtn("home", "Home")}
               {linkBtn("about", "About")}
@@ -49,7 +49,7 @@ export default function Footer({ setActive }) {
           </div>
 
           <div>
-            <h4 className="font-bold mb-4 text-sm uppercase tracking-wider text-gray-300">Services</h4>
+            <h2 className="font-bold mb-4 text-sm uppercase tracking-wider text-gray-300">Services</h2>
             <div className="flex flex-col gap-2">
               {linkBtn("services", "Application Help")}
               {linkBtn("services", "Resume & Career")}
@@ -59,7 +59,7 @@ export default function Footer({ setActive }) {
           </div>
 
           <div>
-            <h4 className="font-bold mb-4 text-sm uppercase tracking-wider text-gray-300">Connect</h4>
+            <h2 className="font-bold mb-4 text-sm uppercase tracking-wider text-gray-300">Connect</h2>
             <div className="flex flex-col gap-2">
               <a
                 href={WA}

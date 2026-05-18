@@ -27,9 +27,9 @@ export default function AboutTab() {
       <div className="grid md:grid-cols-2 gap-12 mb-14">
         <div>
           <Chip text="About Me" color={PASTEL.purple} />
-          <h2 className="text-3xl sm:text-4xl font-black text-gray-800 mb-6">
+          <h1 className="text-3xl sm:text-4xl font-black text-gray-800 mb-6">
             Hi, I&apos;m Vindula Sruthi 👋
-          </h2>
+          </h1>
           <p className="text-gray-600 leading-relaxed mb-4">
             I&apos;m a BTech student offering friendly, affordable help for counselling, college
             applications, resumes, projects, and more. Parents and students can reach me easily on

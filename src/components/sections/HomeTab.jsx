@@ -23,8 +23,9 @@ export default function HomeTab({ setActive }) {
   const marquee = [...MARQUEE_ITEMS, ...MARQUEE_ITEMS];
 
   return (
-    <div
+    <section
       className="min-h-screen relative overflow-hidden"
+      aria-label="Home"
       style={{
         background: "linear-gradient(160deg, #FFF5FF 0%, #EFF6FF 40%, #F0FDF4 100%)",
       }}
@@ -43,6 +44,7 @@ export default function HomeTab({ setActive }) {
           key={i}
           className={`absolute opacity-35 animate-floatBob pointer-events-none ${f.className}`}
           style={{ animationDelay: `${i * 0.5}s` }}
+          aria-hidden="true"
         >
           {f.emoji}
         </span>
@@ -152,6 +154,6 @@ export default function HomeTab({ setActive }) {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }

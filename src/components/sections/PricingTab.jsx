@@ -107,7 +107,7 @@ export default function PricingTab() {
         {FAQS.map((f) => (
           <Card key={f.q} className="p-5">
             <div className="text-2xl mb-2">{f.icon}</div>
-            <h4 className="font-bold text-gray-800 mb-2">{f.q}</h4>
+            <h3 className="font-bold text-gray-800 mb-2">{f.q}</h3>
             <p className="text-sm text-gray-500">{f.a}</p>
           </Card>
         ))}

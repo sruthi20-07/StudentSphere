@@ -16,6 +16,7 @@ export default function TabBar({ active, setActive }) {
       className={`fixed top-0 left-0 right-0 z-50 bg-white/97 backdrop-blur-md transition-shadow ${
         scrolled ? "shadow-lg" : ""
       }`}
+      role="banner"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="h-14 flex items-center justify-between">
@@ -23,13 +24,15 @@ export default function TabBar({ active, setActive }) {
             type="button"
             onClick={() => setActive("home")}
             className="flex items-center gap-2.5 hover:opacity-90 transition-opacity"
+            aria-label="Vindula Student Services — go to home"
           >
-            <div
+            <span
               className="w-9 h-9 rounded-full flex items-center justify-center text-white font-black text-sm"
               style={{ background: "linear-gradient(135deg, #A78BFA, #F472B6)" }}
+              aria-hidden="true"
             >
               V
-            </div>
+            </span>
             <span className="font-bold text-gray-800 text-sm sm:text-base hidden xs:block">
               Vindula Student Services
             </span>
@@ -42,13 +45,16 @@ export default function TabBar({ active, setActive }) {
           </div>
         </div>
 
-        <div className="h-[46px] flex items-center overflow-x-auto hide-scrollbar gap-1 pb-1">
+        <nav className="h-[46px] flex items-center overflow-x-auto hide-scrollbar gap-1 pb-1" aria-label="Main site sections">
           {TABS.map((tab) => {
             const isActive = active === tab.id;
             return (
               <button
                 key={tab.id}
                 type="button"
+                role="tab"
+                aria-selected={isActive}
+                aria-current={isActive ? "page" : undefined}
                 onClick={() => setActive(tab.id)}
                 className={`flex-shrink-0 flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold transition-all relative ${
                   isActive ? "" : "text-gray-500 hover:text-gray-700"
@@ -63,7 +69,7 @@ export default function TabBar({ active, setActive }) {
                     : {}
                 }
               >
-                <span>{tab.icon}</span>
+                <span aria-hidden="true">{tab.icon}</span>
                 <span>{tab.label}</span>
                 {isActive && (
                   <span
@@ -74,7 +80,7 @@ export default function TabBar({ active, setActive }) {
               </button>
             );
           })}
-        </div>
+        </nav>
       </div>
     </header>
   );
