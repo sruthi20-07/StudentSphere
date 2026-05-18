@@ -1,5 +1,5 @@
 import React from "react";
-import { PASTEL, WA, MARQUEE_ITEMS, TRUST_BADGES } from "../../constants/config.js";
+import { PASTEL, WA, MARQUEE_ITEMS, TRUST_BADGES, WHATSAPP_SEND_HINT } from "../../constants/config.js";
 import Btn from "../ui/Btn.jsx";
 import HowItWorks from "./HowItWorks.jsx";
 
@@ -70,7 +70,7 @@ export default function HomeTab({ setActive }) {
             <p className="text-gray-600 text-lg mb-1">Applications · Resumes · Projects · Career Support</p>
             <p className="text-gray-500 mb-8">Built by a student, for students & parents.</p>
 
-            <div className="flex flex-wrap gap-3 mb-8">
+            <div className="flex flex-wrap gap-3 mb-2">
               <Btn color={PASTEL.purple} variant="primary" onClick={() => setActive("services")}>
                 🎯 View Services
               </Btn>
@@ -78,6 +78,7 @@ export default function HomeTab({ setActive }) {
                 💬 WhatsApp Me
               </Btn>
             </div>
+            <p className="text-xs text-gray-400 mb-8 max-w-md leading-relaxed">{WHATSAPP_SEND_HINT}</p>
 
             <div className="flex flex-wrap gap-2">
               {TRUST_BADGES.map((t) => (
@@ -122,6 +123,7 @@ export default function HomeTab({ setActive }) {
               <Btn color={PASTEL.green} variant="primary" href={WA} fullWidth>
                 💬 Chat on WhatsApp
               </Btn>
+              <p className="text-[11px] text-gray-400 mt-3 leading-relaxed">{WHATSAPP_SEND_HINT}</p>
             </div>
           </div>
         </div>

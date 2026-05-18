@@ -1,4 +1,5 @@
 import React from "react";
+import { WHATSAPP_SEND_HINT } from "../../utils/whatsapp.js";
 
 export default function Btn({
   children,
@@ -9,6 +10,7 @@ export default function Btn({
   type = "button",
   className = "",
   fullWidth = false,
+  title,
 }) {
   const base =
     "inline-flex items-center justify-center gap-2 px-6 py-3 rounded-2xl font-bold text-sm transition-transform hover:scale-105 active:scale-95 " +
@@ -37,9 +39,12 @@ export default function Btn({
     };
   }
 
+  const linkTitle =
+    title ?? (typeof href === "string" && href.includes("wa.me") ? WHATSAPP_SEND_HINT : undefined);
+
   if (href) {
     return (
-      <a href={href} target="_blank" rel="noreferrer" className={cls} style={style}>
+      <a href={href} target="_blank" rel="noreferrer" title={linkTitle} className={cls} style={style}>
         {children}
       </a>
     );

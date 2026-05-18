@@ -1,5 +1,5 @@
 import React from "react";
-import { WA } from "../../constants/config.js";
+import { WA, WHATSAPP_SEND_HINT } from "../../constants/config.js";
 
 export default function WAFloat() {
   return (
@@ -12,7 +12,8 @@ export default function WAFloat() {
         background: "linear-gradient(135deg, #22c55e, #16a34a)",
         boxShadow: "0 8px 30px rgba(34,197,94,0.45)",
       }}
-      aria-label="WhatsApp"
+      title={WHATSAPP_SEND_HINT}
+      aria-label="WhatsApp chat"
     >
       💬
     </a>

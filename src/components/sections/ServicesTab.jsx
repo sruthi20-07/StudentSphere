@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { PASTEL, SERVICES, SERVICE_CATEGORIES, generateWhatsAppLink } from "../../constants/config.js";
+import { PASTEL, SERVICES, SERVICE_CATEGORIES, generateWhatsAppLink, WHATSAPP_SEND_HINT } from "../../constants/config.js";
 import SectionHead from "../ui/SectionHead.jsx";
 import Card from "../ui/Card.jsx";
 import Btn from "../ui/Btn.jsx";
@@ -39,6 +39,12 @@ export default function ServicesTab() {
         ))}
       </div>
 
+      {category === "project" && (
+        <p className="text-center text-sm text-gray-500 mb-6 max-w-xl mx-auto leading-relaxed">
+          Projects are based on requirements. Pricing starts from ₹199
+        </p>
+      )}
+
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {items.map((s) => (
           <Card key={s.name} className="p-6 flex flex-col hover:-translate-y-1 transition-transform">
@@ -51,17 +57,21 @@ export default function ServicesTab() {
             <h3 className="font-bold text-gray-800 mb-2">{s.name}</h3>
             <p className="text-sm text-gray-500 flex-grow mb-4">{s.desc}</p>
             <hr className="border-gray-100 mb-4" />
-            <div className="flex items-center justify-between">
-              <span className="font-black" style={{ color: s.color.text }}>
-                From ₹{s.price}
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+              <span className="font-black text-sm sm:text-base leading-snug" style={{ color: s.color.text }}>
+                {s.priceDisplay != null ? s.priceDisplay : `₹${s.price}`}
               </span>
-              <Btn color={s.color} variant="soft" href={generateWhatsAppLink(s.name)}>
+              <Btn color={s.color} variant="soft" href={generateWhatsAppLink(s.name)} className="flex-shrink-0">
                 Enquire →
               </Btn>
             </div>
           </Card>
         ))}
       </div>
+
+      <p className="text-xs text-gray-400 text-center mt-8 max-w-md mx-auto leading-relaxed">
+        {WHATSAPP_SEND_HINT}
+      </p>
     </div>
   );
 }

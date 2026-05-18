@@ -45,36 +45,35 @@ export const SERVICE_CATEGORIES = [
 
 export const SERVICES = {
   application: [
-    { icon: "📊", name: "EAMCET Counselling Help", desc: "Seat allotment guidance & certificate verification support", price: 199, color: PASTEL.blue },
-    { icon: "📈", name: "POLYCET Counselling Help", desc: "Diploma counselling process made simple step-by-step", price: 149, color: PASTEL.blue },
-    { icon: "🎓", name: "College Admissions", desc: "Help with college admission forms & online applications", price: 149, color: PASTEL.blue },
-    { icon: "🏆", name: "Scholarship Applications", desc: "Find & apply for scholarships with guided support", price: 99, color: PASTEL.blue },
-    { icon: "📁", name: "Document Upload Help", desc: "Correct formatting, scanning & uploading documents", price: 49, color: PASTEL.blue },
+    { icon: "📊", name: "EAMCET Counselling Help", desc: "Seat allotment guidance & certificate verification support", price: 99, color: PASTEL.blue },
+    { icon: "📈", name: "POLYCET Counselling Help", desc: "Diploma counselling process made simple step-by-step", price: 99, color: PASTEL.blue },
+    { icon: "🎓", name: "College Admissions", desc: "Help with college admission forms & online applications", price: 29, color: PASTEL.blue },
+    { icon: "🏆", name: "Scholarship Applications", desc: "Find & apply for scholarships with guided support", price: 79, color: PASTEL.blue },
+    { icon: "📁", name: "Document Upload Help", desc: "Correct formatting, scanning & uploading documents", price: 29, color: PASTEL.blue },
     { icon: "💼", name: "Job Applications", desc: "Online job portal applications & form filling help", price: 79, color: PASTEL.blue },
-    { icon: "✍️", name: "Exam Registrations", desc: "JEE, EAMCET, NEET & other exam registration forms", price: 79, color: PASTEL.blue },
-    { icon: "📝", name: "Form Filling Services", desc: "Any online/offline form filling done carefully for you", price: 49, color: PASTEL.blue },
+    { icon: "✍️", name: "Exam Registrations", desc: "JEE, EAMCET, NEET & other exam registration forms", price: 49, color: PASTEL.blue },
+    { icon: "📝", name: "Form Filling Services", desc: "Any online/offline form filling done carefully for you", price: 29, color: PASTEL.blue },
   ],
   resume: [
-    { icon: "📄", name: "Resume Building", desc: "Professional ATS-friendly resume tailored for you", price: 99, color: PASTEL.purple },
-    { icon: "🔗", name: "LinkedIn Profile Setup", desc: "Complete LinkedIn optimization for jobs & internships", price: 149, color: PASTEL.purple },
-    { icon: "✉️", name: "Cover Letter Writing", desc: "Personalized cover letters for every application", price: 99, color: PASTEL.purple },
-    { icon: "📋", name: "CV Building", desc: "Academic & professional CV for higher studies or jobs", price: 99, color: PASTEL.purple },
-    { icon: "🏢", name: "Internship Application Help", desc: "Find, apply & prepare for internship opportunities", price: 149, color: PASTEL.purple },
-    { icon: "🐙", name: "GitHub Profile Setup", desc: "Professional GitHub with pinned repos & README", price: 149, color: PASTEL.purple },
+    { icon: "📄", name: "Resume Building", desc: "Professional ATS-friendly resume tailored for you", price: 79, color: PASTEL.purple },
+    { icon: "🔗", name: "LinkedIn Profile Setup", desc: "Complete LinkedIn optimization for jobs & internships", price: 50, color: PASTEL.purple },
+    { icon: "✉️", name: "Cover Letter Writing", desc: "Personalized cover letters for every application", price: 30, color: PASTEL.purple },
+    { icon: "📋", name: "CV Building", desc: "Academic & professional CV for higher studies or jobs", price: 30, color: PASTEL.purple },
+    { icon: "🏢", name: "Internship Application Help", desc: "Find, apply & prepare for internship opportunities", price: 50, color: PASTEL.purple },
+    { icon: "🐙", name: "GitHub Profile Setup", desc: "Professional GitHub with pinned repos & README", price: 50, color: PASTEL.purple },
   ],
   project: [
-    { icon: "🌐", name: "Portfolio Websites", desc: "Beautiful personal portfolio to showcase your work", price: 199, color: PASTEL.green },
-    { icon: "🔧", name: "Mini Projects", desc: "HTML/CSS/JS mini projects for college submissions", price: 149, color: PASTEL.green },
-    { icon: "⚛️", name: "React Projects", desc: "Modern React apps with hooks & clean UI", price: 199, color: PASTEL.green },
-    { icon: "🔥", name: "Firebase Projects", desc: "Full-stack apps with Firebase auth & database", price: 199, color: PASTEL.green },
-    { icon: "🎨", name: "UI/UX Prototype Design", desc: "Figma wireframes & clickable prototypes", price: 149, color: PASTEL.green },
-    { icon: "📝", name: "Academic Project Reports", desc: "IEEE format reports, synopsis & documentation", price: 79, color: PASTEL.green },
+    { icon: "🌐", name: "Portfolio Websites", desc: "Beautiful personal portfolio to showcase your work", priceDisplay: "Starts from ₹199", color: PASTEL.green },
+    { icon: "🔧", name: "Mini Projects", desc: "HTML/CSS/JS mini projects for college submissions", priceDisplay: "Starts from ₹199", color: PASTEL.green },
+    { icon: "⚛️", name: "React Projects", desc: "Modern React apps with hooks & clean UI", priceDisplay: "Starts from ₹199", color: PASTEL.green },
+    { icon: "🔥", name: "Firebase Projects", desc: "Full-stack apps with Firebase auth & database", priceDisplay: "Starts from ₹199", color: PASTEL.green },
+    { icon: "📑", name: "Project Reports", desc: "Well-formatted project reports for college submissions", priceDisplay: "Starts from ₹199", color: PASTEL.green },
+    { icon: "🎨", name: "UI/UX Prototype Design", desc: "Figma wireframes & clickable prototypes", priceDisplay: "Starts from ₹199", color: PASTEL.green },
   ],
   other: [
-    { icon: "📚", name: "Study Material Help", desc: "Organized notes, summaries & study resources", price: 49, color: PASTEL.cyan },
-    { icon: "❓", name: "Doubt Clarification", desc: "Quick academic & project doubt clearing on WhatsApp", price: 29, color: PASTEL.cyan },
-    { icon: "📑", name: "Project Reports", desc: "Well-formatted project reports for college submissions", price: 79, color: PASTEL.cyan },
-    { icon: "🖌️", name: "UI/UX Design Help", desc: "Screen designs, layouts & visual improvements", price: 149, color: PASTEL.cyan },
+    { icon: "📚", name: "Study Material Help", desc: "Organized notes, summaries & study resources", priceDisplay: "Starts from your requirement", color: PASTEL.cyan },
+    { icon: "❓", name: "Doubt Clarification", desc: "Quick academic & project doubt clearing on WhatsApp", priceDisplay: "Starts from your requirement", color: PASTEL.cyan },
+    { icon: "🖌️", name: "UI/UX Design (Prototype)", desc: "Screen designs, layouts & visual improvements", priceDisplay: "Starts from your requirement", color: PASTEL.cyan },
   ],
 };
 
@@ -82,7 +81,7 @@ export const PRICING = [
   {
     icon: "📝",
     name: "Quick Help",
-    price: 29,
+    priceLabel: "Starts from your requirement",
     color: PASTEL.cyan,
     popular: false,
     features: [
@@ -96,7 +95,8 @@ export const PRICING = [
   {
     icon: "📋",
     name: "Application & Counselling",
-    price: 79,
+    price: 29,
+    priceCaption: "from",
     color: PASTEL.blue,
     popular: false,
     features: [
@@ -110,7 +110,8 @@ export const PRICING = [
   {
     icon: "📄",
     name: "Resume & Career",
-    price: 99,
+    price: 30,
+    priceCaption: "from",
     color: PASTEL.purple,
     popular: true,
     features: [
@@ -124,14 +125,16 @@ export const PRICING = [
   {
     icon: "💻",
     name: "Projects & Design",
-    price: 149,
+    price: 199,
+    priceCaption: "from",
+    projectNote: "Projects are based on requirements. Pricing starts from ₹199",
     color: PASTEL.green,
     popular: false,
     features: [
       "Mini & React projects",
       "Portfolio websites",
       "UI/UX prototype design",
-      "Academic project reports",
+      "Project reports",
       "Firebase projects",
     ],
   },
@@ -158,5 +161,5 @@ export const TABS = [
   { id: "contact", label: "Contact", icon: "💬", color: PASTEL.rose },
 ];
 
-/** WhatsApp deep links — use generateWhatsAppLink(serviceName) for service-specific templates */
-export { generateWhatsAppLink, WA, WA_PHONE, openWhatsApp } from "../utils/whatsapp.js";
+/** WhatsApp deep links — use generateWhatsAppLink(serviceName, customMessage) */
+export { generateWhatsAppLink, WA, WA_PHONE, openWhatsApp, WHATSAPP_SEND_HINT } from "../utils/whatsapp.js";

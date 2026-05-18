@@ -1,5 +1,5 @@
 import React from "react";
-import { WA } from "../../constants/config.js";
+import { WA, WHATSAPP_SEND_HINT } from "../../constants/config.js";
 
 export default function Footer({ setActive }) {
   const go = (id) => {
@@ -61,7 +61,13 @@ export default function Footer({ setActive }) {
           <div>
             <h4 className="font-bold mb-4 text-sm uppercase tracking-wider text-gray-300">Connect</h4>
             <div className="flex flex-col gap-2">
-              <a href={WA} target="_blank" rel="noreferrer" className="text-gray-400 hover:text-white text-sm transition-colors">
+              <a
+                href={WA}
+                target="_blank"
+                rel="noreferrer"
+                title={WHATSAPP_SEND_HINT}
+                className="text-gray-400 hover:text-white text-sm transition-colors"
+              >
                 WhatsApp
               </a>
               <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">

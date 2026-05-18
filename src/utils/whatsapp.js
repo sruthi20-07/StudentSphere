@@ -1,66 +1,54 @@
 /**
- * Centralized WhatsApp enquiry links — one template per service / bundle.
- * Phone: 916304206091 (no + in wa.me URL)
+ * Centralized WhatsApp enquiry links.
+ * URL format: https://wa.me/916304206091?text=<encodeURIComponent(message)>
+ * Use <a href={url} target="_blank" rel="noreferrer"> (see Btn.jsx).
  */
 
 export const WA_PHONE = "916304206091";
 
+/** Tooltip + helper copy for WhatsApp links */
+export const WHATSAPP_SEND_HINT = "After WhatsApp opens, press Send to start chatting.";
+
+/** Keys = exact service / plan names from config (or aliases below). */
 const TEMPLATES = {
-  "Resume Building": `Hi Vindula 👋
+  "EAMCET Counselling Help": `Hi Vindula 👋
 
-I want help with Resume Building.
+I need help with EAMCET Counselling.
 
-Here are my details:
-• Branch:
-• Year:
-• Skills:
-• Internship experience:
-• Preferred resume type:
-• Target company/job:
+My details:
+• Rank:
+• Category:
+• Preferred colleges:
+• Preferred branch:
+• State:
 
-Please share pricing and process.`,
+Please guide me through the counselling process.`,
 
-  "Portfolio Website": `Hi Vindula 👋
+  "POLYCET Counselling Help": `Hi Vindula 👋
 
-I want a Portfolio Website.
+I need help with POLYCET Counselling.
 
-Here are my requirements:
-• Portfolio type:
-• Sections needed:
-• Preferred colors:
-• Need contact form?:
-• Need deployment?:
-• Deadline:
+Details:
+• Rank:
+• Preferred college:
+• Preferred branch:
+• Documents ready?:
 
-Please share pricing and timeline.`,
+Please guide me with counselling.`,
 
-  "React Project": `Hi Vindula 👋
+  "College Admissions": `Hi Vindula 👋
 
-I need help with a React Project.
+I need help with College Admissions.
 
-Project details:
-• Project title:
-• Features required:
-• Firebase needed?:
-• Deadline:
-• Documentation needed?:
+Details:
+• Course:
+• Preferred colleges:
+• State:
+• Admission type:
 
-Please share cost and development timeline.`,
+Please share admission guidance.`,
 
-  "Firebase Project": `Hi Vindula 👋
-
-I need help with a Firebase Project.
-
-Requirements:
-• Authentication needed?:
-• Database needed?:
-• Hosting required?:
-• Project type:
-• Deadline:
-
-Please share pricing and process.`,
-
-  "Scholarship Application": `Hi Vindula 👋
+  "Scholarship Applications": `Hi Vindula 👋
 
 I want help with Scholarship Applications.
 
@@ -70,69 +58,31 @@ Details:
 • Required documents:
 • Deadline:
 
-Please guide me with the process.`,
-
-  "EAMCET Counselling": `Hi Vindula 👋
-
-I need guidance for EAMCET Counselling.
-
-Details:
-• Rank:
-• Category:
-• Preferred colleges:
-• Preferred branch:
-• State:
-
-Please guide me through counselling.`,
-
-  "POLYCET Counselling": `Hi Vindula 👋
-
-I need guidance for POLYCET Counselling.
-
-Details:
-• Rank / merit:
-• Category:
-• Preferred colleges / branches:
-• Diploma details:
-• State:
-
-Please guide me through counselling.`,
-
-  "LinkedIn Setup": `Hi Vindula 👋
-
-I want help setting up my LinkedIn profile.
-
-Details:
-• Current role/student status:
-• Skills:
-• Career goal:
-• Need portfolio linking?:
-
-Please share process and pricing.`,
+Please guide me through the process.`,
 
   "Document Upload Help": `Hi Vindula 👋
 
 I need help uploading documents.
 
 Details:
-• Which portal?:
+• Portal name:
 • Document types:
 • Deadline:
-• Any errors showing?:
+• Error if any:
 
-Please help me complete the process.`,
+Please help me complete the upload.`,
 
   "Job Applications": `Hi Vindula 👋
 
 I need help with Job Applications.
 
 Details:
-• Target role:
+• Job role:
 • Resume ready?:
-• Company names:
-• Need ATS optimization?:
+• Companies applying for:
+• ATS optimization needed?:
 
-Please share process and support details.`,
+Please share process and pricing.`,
 
   "Exam Registrations": `Hi Vindula 👋
 
@@ -142,116 +92,147 @@ Details:
 • Exam name:
 • Last date:
 • Documents ready?:
-• Category:
 
-Please help me with registration.`,
+Please help me complete registration.`,
+
+  "Form Filling Services": `Hi Vindula 👋
+
+I need help with Form Filling Services.
+
+Details:
+• Form type:
+• Last date:
+• Documents ready?:
+
+Please help me complete the form.`,
+
+  "Resume Building": `Hi Vindula 👋
+
+I want help with Resume Building.
+
+Details:
+• Branch:
+• Year:
+• Skills:
+• Experience:
+• Target role/company:
+
+Please share pricing and samples.`,
+
+  "LinkedIn Profile Setup": `Hi Vindula 👋
+
+I want help setting up my LinkedIn profile.
+
+Details:
+• Current role/student status:
+• Skills:
+• Career goal:
+
+Please share pricing and process.`,
+
+  "Cover Letter Writing": `Hi Vindula 👋
+
+I need a professional Cover Letter.
+
+Details:
+• Job role:
+• Company:
+• Experience:
+• Skills:
+
+Please share pricing.`,
+
+  "CV Building": `Hi Vindula 👋
+
+I want help building a professional CV.
+
+Please share process and pricing.`,
+
+  "Internship Application Help": `Hi Vindula 👋
+
+I need help with Internship Applications.
+
+Details:
+• Preferred domain:
+• Resume ready?:
+• Companies:
+
+Please guide me.`,
+
+  "GitHub Profile Setup": `Hi Vindula 👋
+
+I want help setting up my GitHub profile professionally.
+
+Please share details and pricing.`,
+
+  "Portfolio Websites": `Hi Vindula 👋
+
+I want a Portfolio Website.
+
+Requirements:
+• Sections needed:
+• Preferred colors:
+• Need deployment?:
+• Deadline:
+
+Please share pricing and timeline.`,
 
   "Mini Projects": `Hi Vindula 👋
 
 I need a Mini Project.
 
-Requirements:
-• Project topic:
+Details:
+• Topic:
 • Technology:
-• Need report/documentation?:
 • Deadline:
+• Documentation needed?:
 
 Please share pricing and samples.`,
 
-  "UI/UX Design": `Hi Vindula 👋
+  "React Projects": `Hi Vindula 👋
 
-I need help with UI/UX Design.
+I need help with a React Project.
 
-Requirements:
-• App/website type:
-• Preferred style:
+Details:
+• Features required:
+• Firebase needed?:
+• Deadline:
+
+Please share pricing.`,
+
+  "Firebase Projects": `Hi Vindula 👋
+
+I need help with a Firebase Project.
+
+Details:
+• Authentication needed?:
+• Database needed?:
+• Hosting required?:
+
+Please share process and pricing.`,
+
+  "Project Reports": `Hi Vindula 👋
+
+I need help preparing Project Reports.
+
+Details:
+• Project topic:
+• Technology:
+• Deadline:
+
+Please share pricing.`,
+
+  "UI/UX Prototype Design": `Hi Vindula 👋
+
+I need help with UI/UX Prototype Design.
+
+Details:
+• Website/app type:
 • Need Figma?:
+• Preferred style:
 • Deadline:
 
 Please share pricing and design process.`,
-
-  "College Admissions": `Hi Vindula 👋
-
-I need help with College Admissions.
-
-Details:
-• Course / program:
-• Colleges applying to:
-• Documents ready?:
-• Deadline:
-
-Please share process and support.`,
-
-  "Form Filling Services": `Hi Vindula 👋
-
-I need help with Form Filling.
-
-Details:
-• Form / portal name:
-• Purpose:
-• Documents available?:
-• Deadline:
-
-Please help me complete it correctly.`,
-
-  "Cover Letter Writing": `Hi Vindula 👋
-
-I want help with Cover Letter Writing.
-
-Details:
-• Role / program applying for:
-• Resume link or summary:
-• Tone (formal / friendly):
-• Deadline:
-
-Please share pricing and process.`,
-
-  "CV Building": `Hi Vindula 👋
-
-I want help with CV Building.
-
-Details:
-• Academic / job purpose:
-• Branch / field:
-• Achievements to highlight:
-• Deadline:
-
-Please share pricing and process.`,
-
-  "Internship Application Help": `Hi Vindula 👋
-
-I need Internship Application Help.
-
-Details:
-• Field / domain:
-• Year of study:
-• Resume ready?:
-• Target companies (if any):
-
-Please share process and pricing.`,
-
-  "GitHub Profile Setup": `Hi Vindula 👋
-
-I want help with GitHub Profile Setup.
-
-Details:
-• Projects to showcase:
-• Username preference:
-• Need README templates?:
-
-Please share process and pricing.`,
-
-  "Academic Project Reports": `Hi Vindula 👋
-
-I need help with Academic Project Reports.
-
-Details:
-• Project title:
-• Format (IEEE / college format):
-• Word count / pages:
-• Deadline:
-
-Please share pricing and timeline.`,
 
   "Study Material Help": `Hi Vindula 👋
 
@@ -259,55 +240,42 @@ I need Study Material Help.
 
 Details:
 • Subject / topic:
-• Exam or course:
-• Preferred format (notes / summary):
+• What format helps you most?:
 • Deadline:
 
-Please share how you can help.`,
+Please share pricing based on my requirement.`,
 
   "Doubt Clarification": `Hi Vindula 👋
 
-I need Doubt Clarification help.
+I need Doubt Clarification.
 
 Details:
 • Subject / topic:
 • Where I'm stuck:
-• Preferred time for chat:
 
-Please let me know the next steps.`,
+Please share pricing based on my requirement.`,
 
-  "Project Reports": `Hi Vindula 👋
+  "UI/UX Design (Prototype)": `Hi Vindula 👋
 
-I need help with Project Reports.
-
-Details:
-• Project title:
-• College requirements:
-• Deadline:
-
-Please share pricing and process.`,
-
-  "Documentation Help": `Hi Vindula 👋
-
-I need Documentation Help.
+I need help with UI/UX Design (Prototype).
 
 Details:
-• Project / topic:
-• Type (synopsis / report / manual):
-• Format required:
+• Website/app type:
+• Need Figma?:
+• Preferred style:
 • Deadline:
 
-Please share pricing and timeline.`,
+Please share pricing based on my requirement.`,
 
   "Quick Help": `Hi Vindula 👋
 
-I'm interested in Quick Help (doubt clarification, small forms, study tips).
+I'm interested in Quick Help (doubt clarification, small tasks, study tips).
 
 Details:
 • What I need:
 • Urgency / deadline:
 
-Please share pricing and availability.`,
+Please share pricing based on my requirement.`,
 
   "Application & Counselling": `Hi Vindula 👋
 
@@ -356,56 +324,35 @@ Please share pricing and next steps.
 Thank you!`,
 };
 
-/** Map UI / config labels → template keys in TEMPLATES */
+/** Aliases → template key (must exist in TEMPLATES). */
 const SERVICE_NAME_TO_KEY = {
-  "Resume Building": "Resume Building",
-  "Portfolio Websites": "Portfolio Website",
-  "Portfolio Website": "Portfolio Website",
-  "React Projects": "React Project",
-  "React Project": "React Project",
-  "Firebase Projects": "Firebase Project",
-  "Firebase Project": "Firebase Project",
-  "Scholarship Applications": "Scholarship Application",
-  "Scholarship Application": "Scholarship Application",
-  "EAMCET Counselling Help": "EAMCET Counselling",
-  "EAMCET Counselling": "EAMCET Counselling",
-  "POLYCET Counselling Help": "POLYCET Counselling",
-  "LinkedIn Profile Setup": "LinkedIn Setup",
-  "LinkedIn Setup": "LinkedIn Setup",
-  "Document Upload Help": "Document Upload Help",
-  "Job Applications": "Job Applications",
-  "Exam Registrations": "Exam Registrations",
-  "Mini Projects": "Mini Projects",
-  "UI/UX Prototype Design": "UI/UX Design",
-  "UI/UX Design Help": "UI/UX Design",
-  "College Admissions": "College Admissions",
-  "Form Filling Services": "Form Filling Services",
-  "Cover Letter Writing": "Cover Letter Writing",
-  "CV Building": "CV Building",
-  "Internship Application Help": "Internship Application Help",
-  "GitHub Profile Setup": "GitHub Profile Setup",
-  "Academic Project Reports": "Academic Project Reports",
-  "Study Material Help": "Study Material Help",
-  "Doubt Clarification": "Doubt Clarification",
-  "Project Reports": "Project Reports",
-  "Documentation Help": "Documentation Help",
-  "Quick Help": "Quick Help",
-  "Application & Counselling": "Application & Counselling",
-  "Resume & Career": "Resume & Career",
-  "Projects & Design": "Projects & Design",
+  "Portfolio Website": "Portfolio Websites",
+  "React Project": "React Projects",
+  "Firebase Project": "Firebase Projects",
+  "Scholarship Application": "Scholarship Applications",
+  "EAMCET Counselling": "EAMCET Counselling Help",
+  "POLYCET Counselling": "POLYCET Counselling Help",
+  "LinkedIn Setup": "LinkedIn Profile Setup",
+  "UI/UX Design Help": "UI/UX Design (Prototype)",
+  "Documentation Help": "General",
   Other: "General",
 };
 
-function getMessageBody(serviceName) {
+function resolveTemplateKey(serviceName) {
   if (!serviceName || typeof serviceName !== "string" || !serviceName.trim()) {
-    return TEMPLATES.General;
+    return "General";
   }
   const trimmed = serviceName.trim();
-  const key = SERVICE_NAME_TO_KEY[trimmed] || trimmed;
+  if (TEMPLATES[trimmed]) return trimmed;
+  return SERVICE_NAME_TO_KEY[trimmed] || trimmed;
+}
+
+function getMessageBody(serviceName) {
+  const key = resolveTemplateKey(serviceName);
   if (TEMPLATES[key]) return TEMPLATES[key];
   return `Hi Vindula 👋
 
-I'm interested in: ${trimmed}
+I'm interested in: ${serviceName.trim()}
 
 Details:
 • What I need:
@@ -419,21 +366,25 @@ Thank you!`;
 
 /**
  * Full WhatsApp URL for wa.me with pre-filled message.
- * @param {string} [serviceName] - Service or bundle label from UI; omit for general enquiry.
+ * @param {string} [serviceName] - Service or plan label from UI (template lookup).
+ * @param {string} [customMessage] - If non-empty, used as the message body instead of templates.
  * @returns {string}
  */
-export function generateWhatsAppLink(serviceName) {
-  const text = getMessageBody(serviceName);
-  return `https://wa.me/${WA_PHONE}?text=${encodeURIComponent(text)}`;
+export function generateWhatsAppLink(serviceName, customMessage) {
+  const body =
+    typeof customMessage === "string" && customMessage.trim().length > 0
+      ? customMessage.trim()
+      : getMessageBody(serviceName);
+  return `https://wa.me/${WA_PHONE}?text=${encodeURIComponent(body)}`;
 }
 
 /**
  * Open WhatsApp in a new tab (same behaviour as Btn with target="_blank").
  * @param {string} [serviceName]
+ * @param {string} [customMessage]
  */
-export function openWhatsApp(serviceName) {
-  const url = generateWhatsAppLink(serviceName);
-  window.open(url, "_blank", "noopener,noreferrer");
+export function openWhatsApp(serviceName, customMessage) {
+  window.open(generateWhatsAppLink(serviceName, customMessage), "_blank", "noopener,noreferrer");
 }
 
 /** Generic enquiry link (navbar, float, footer, home, contact default). */

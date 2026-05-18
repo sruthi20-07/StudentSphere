@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { PASTEL, WA } from "../../constants/config.js";
+import { PASTEL, WA, WHATSAPP_SEND_HINT } from "../../constants/config.js";
 import SectionHead from "../ui/SectionHead.jsx";
 import Card from "../ui/Card.jsx";
 import Btn from "../ui/Btn.jsx";
@@ -17,7 +17,7 @@ const FAQS = [
   },
   {
     q: "💳 How do payments work?",
-    a: "UPI / GPay / PhonePe. Small tasks (under ₹99) — pay full upfront. Larger work — 50% advance, 50% after delivery.",
+    a: "UPI / GPay / PhonePe.",
   },
   {
     q: "🔒 Are my documents safe?",
@@ -76,6 +76,7 @@ export default function ContactTab() {
                 href={c.href}
                 target={c.href.startsWith("http") ? "_blank" : undefined}
                 rel={c.href.startsWith("http") ? "noreferrer" : undefined}
+                title={c.href?.includes("wa.me") ? WHATSAPP_SEND_HINT : undefined}
                 className="flex items-center gap-4 p-4 rounded-2xl transition-transform hover:-translate-y-1"
                 style={{ background: c.color.bg }}
               >
@@ -88,9 +89,10 @@ export default function ContactTab() {
             ))}
           </div>
 
-          <Btn color={PASTEL.green} variant="primary" href={WA} fullWidth className="mb-4">
+          <Btn color={PASTEL.green} variant="primary" href={WA} fullWidth className="mb-2">
             💬 Quick Chat on WhatsApp
           </Btn>
+          <p className="text-xs text-gray-400 text-center mb-3 leading-relaxed">{WHATSAPP_SEND_HINT}</p>
           <p className="text-xs text-gray-500 text-center leading-relaxed">
             🔒 Confidential · 🤝 Student-friendly · ⚡ Fast replies · 📦 On-time delivery
           </p>

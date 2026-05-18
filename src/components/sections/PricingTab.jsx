@@ -1,5 +1,5 @@
 import React from "react";
-import { PASTEL, PRICING, generateWhatsAppLink } from "../../constants/config.js";
+import { PASTEL, PRICING, generateWhatsAppLink, WHATSAPP_SEND_HINT } from "../../constants/config.js";
 import SectionHead from "../ui/SectionHead.jsx";
 import Card from "../ui/Card.jsx";
 import Btn from "../ui/Btn.jsx";
@@ -61,11 +61,25 @@ export default function PricingTab() {
             <div className="text-3xl mb-3">{plan.icon}</div>
             <h3 className="font-bold text-gray-800 mb-2">{plan.name}</h3>
             <div className="mb-1">
-              <span className="text-3xl font-black" style={{ color: plan.color.text }}>
-                ₹{plan.price}
-              </span>
-              <span className="text-gray-400 text-sm ml-1">onwards</span>
+              {plan.priceLabel ? (
+                <span className="text-2xl sm:text-3xl font-black block leading-tight" style={{ color: plan.color.text }}>
+                  {plan.priceLabel}
+                </span>
+              ) : (
+                <>
+                  {plan.priceCaption === "from" && (
+                    <span className="text-gray-500 text-sm font-semibold mr-1">From</span>
+                  )}
+                  <span className="text-3xl font-black" style={{ color: plan.color.text }}>
+                    ₹{plan.price}
+                  </span>
+                  <span className="text-gray-400 text-sm ml-1">onwards</span>
+                </>
+              )}
             </div>
+            {plan.projectNote && (
+              <p className="text-xs text-gray-500 mt-2 mb-1 leading-relaxed">{plan.projectNote}</p>
+            )}
             <ul className="space-y-2 my-6 flex-grow">
               {plan.features.map((f) => (
                 <li key={f} className="text-sm text-gray-600 flex gap-2">
@@ -84,6 +98,10 @@ export default function PricingTab() {
           </Card>
         ))}
       </div>
+
+      <p className="text-xs text-gray-400 text-center mb-10 max-w-md mx-auto leading-relaxed">
+        {WHATSAPP_SEND_HINT}
+      </p>
 
       <div className="grid md:grid-cols-3 gap-4 mb-8">
         {FAQS.map((f) => (

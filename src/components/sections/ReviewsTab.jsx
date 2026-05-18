@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { PASTEL, WA, REVIEW_SERVICES, generateWhatsAppLink } from "../../constants/config.js";
+import { PASTEL, WA, REVIEW_SERVICES, generateWhatsAppLink, WHATSAPP_SEND_HINT } from "../../constants/config.js";
 import { supabase } from "../../lib/supabase.js";
 import SectionHead from "../ui/SectionHead.jsx";
 import Card from "../ui/Card.jsx";
@@ -273,6 +273,7 @@ export default function ReviewsTab() {
               💬 WhatsApp
             </Btn>
           </div>
+          <p className="text-xs text-gray-400 mt-3 leading-relaxed">{WHATSAPP_SEND_HINT}</p>
         </form>
       </Card>
     </div>
