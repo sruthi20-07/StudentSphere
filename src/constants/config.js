@@ -139,10 +139,23 @@ export const PRICING = [
   },
 ];
 
+export const REVIEW_SERVICES = [
+  "Resume Building",
+  "Portfolio Website",
+  "React Project",
+  "Firebase Project",
+  "Scholarship Application",
+  "EAMCET Counselling",
+  "LinkedIn Setup",
+  "Documentation Help",
+  "Other",
+];
+
 export const TABS = [
   { id: "home", label: "Home", icon: "🏠", color: PASTEL.purple },
   { id: "about", label: "About", icon: "👤", color: PASTEL.blue },
   { id: "services", label: "Services", icon: "🎯", color: PASTEL.cyan },
   { id: "pricing", label: "Pricing", icon: "💰", color: PASTEL.amber },
+  { id: "reviews", label: "Reviews", icon: "⭐", color: PASTEL.pink },
   { id: "contact", label: "Contact", icon: "💬", color: PASTEL.rose },
 ];

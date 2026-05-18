@@ -67,6 +67,7 @@ export default function Footer({ setActive }) {
               <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
                 Instagram
               </a>
+              {linkBtn("reviews", "Reviews")}
               {linkBtn("contact", "Contact")}
             </div>
           </div>

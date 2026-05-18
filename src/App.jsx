@@ -7,6 +7,7 @@ import AboutTab from "./components/sections/AboutTab.jsx";
 import ServicesTab from "./components/sections/ServicesTab.jsx";
 import PricingTab from "./components/sections/PricingTab.jsx";
 import ContactTab from "./components/sections/ContactTab.jsx";
+import ReviewsTab from "./components/sections/ReviewsTab.jsx";
 
 export default function App() {
   const [active, setActive] = useState("home");
@@ -26,6 +27,8 @@ export default function App() {
         return <ServicesTab />;
       case "pricing":
         return <PricingTab />;
+      case "reviews":
+        return <ReviewsTab />;
       case "contact":
         return <ContactTab />;
       default:
