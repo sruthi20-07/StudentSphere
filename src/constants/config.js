@@ -9,8 +9,6 @@ export const PASTEL = {
   indigo: { bg: "#EEF2FF", accent: "#818CF8", light: "#E0E7FF", text: "#3730A3" },
 };
 
-export const WA = "https://wa.me/916304206091?text=Hi%2C%20I%20want%20to%20know%20about%20your%20services.";
-
 export const MARQUEE_ITEMS = [
   "🤝 Student Friendly",
   "💰 Affordable Prices",
@@ -159,3 +157,6 @@ export const TABS = [
   { id: "reviews", label: "Reviews", icon: "⭐", color: PASTEL.pink },
   { id: "contact", label: "Contact", icon: "💬", color: PASTEL.rose },
 ];
+
+/** WhatsApp deep links — use generateWhatsAppLink(serviceName) for service-specific templates */
+export { generateWhatsAppLink, WA, WA_PHONE, openWhatsApp } from "../utils/whatsapp.js";

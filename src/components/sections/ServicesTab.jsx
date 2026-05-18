@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { PASTEL, SERVICES, SERVICE_CATEGORIES, WA } from "../../constants/config.js";
+import { PASTEL, SERVICES, SERVICE_CATEGORIES, generateWhatsAppLink } from "../../constants/config.js";
 import SectionHead from "../ui/SectionHead.jsx";
 import Card from "../ui/Card.jsx";
 import Btn from "../ui/Btn.jsx";
@@ -55,7 +55,7 @@ export default function ServicesTab() {
               <span className="font-black" style={{ color: s.color.text }}>
                 From ₹{s.price}
               </span>
-              <Btn color={s.color} variant="soft" href={WA}>
+              <Btn color={s.color} variant="soft" href={generateWhatsAppLink(s.name)}>
                 Enquire →
               </Btn>
             </div>

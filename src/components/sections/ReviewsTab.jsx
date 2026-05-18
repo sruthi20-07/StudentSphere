@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { PASTEL, WA, REVIEW_SERVICES } from "../../constants/config.js";
+import { PASTEL, WA, REVIEW_SERVICES, generateWhatsAppLink } from "../../constants/config.js";
 import { supabase } from "../../lib/supabase.js";
 import SectionHead from "../ui/SectionHead.jsx";
 import Card from "../ui/Card.jsx";
@@ -269,7 +269,7 @@ export default function ReviewsTab() {
             >
               {submitting ? "Submitting..." : "Submit Review ⭐"}
             </Btn>
-            <Btn color={PASTEL.green} variant="ghost" href={WA}>
+            <Btn color={PASTEL.green} variant="ghost" href={service ? generateWhatsAppLink(service) : WA}>
               💬 WhatsApp
             </Btn>
           </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import { PASTEL, PRICING, WA } from "../../constants/config.js";
+import { PASTEL, PRICING, generateWhatsAppLink } from "../../constants/config.js";
 import SectionHead from "../ui/SectionHead.jsx";
 import Card from "../ui/Card.jsx";
 import Btn from "../ui/Btn.jsx";
@@ -76,7 +76,7 @@ export default function PricingTab() {
             <Btn
               color={plan.color}
               variant={plan.popular ? "primary" : "ghost"}
-              href={WA}
+              href={generateWhatsAppLink(plan.name)}
               fullWidth
             >
               Get Started
