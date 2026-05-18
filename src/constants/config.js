@@ -162,4 +162,4 @@ export const TABS = [
 ];
 
 /** WhatsApp deep links — use generateWhatsAppLink(serviceName, customMessage) */
-export { generateWhatsAppLink, WA, WA_PHONE, openWhatsApp, WHATSAPP_SEND_HINT } from "../utils/whatsapp.js";
+export { generateWhatsAppLink, WA, WA_PHONE, openWhatsApp, WHATSAPP_SEND_HINT, buildQuickEnquiryWhatsAppUrl, openQuickEnquiryWhatsApp } from "../utils/whatsapp.js";

@@ -379,6 +379,41 @@ export function generateWhatsAppLink(serviceName, customMessage) {
 }
 
 /**
+ * Quick Enquiry form → WhatsApp with all fields prefilled.
+ * @param {{ name: string, email?: string, service: string, requirements: string }} fields
+ */
+export function buildQuickEnquiryWhatsAppUrl({ name, email, service, requirements }) {
+  const n = (name || "").trim();
+  const s = (service || "").trim();
+  const r = (requirements || "").trim();
+  const e = (email || "").trim();
+  const emailLine = e ? `Email: ${e}` : `Email: (not provided)`;
+  const message = `Hi Vindula 👋
+
+I have a new enquiry.
+
+Name: ${n}
+${emailLine}
+Service Needed: ${s}
+
+Requirements:
+${r}
+
+Please contact me regarding this service.`;
+  return `https://wa.me/${WA_PHONE}?text=${encodeURIComponent(message)}`;
+}
+
+/**
+ * Open Quick Enquiry in a new tab.
+ * @param {{ name: string, email?: string, service: string, requirements: string }} fields
+ * @returns {Window | null}
+ */
+export function openQuickEnquiryWhatsApp(fields) {
+  const url = buildQuickEnquiryWhatsAppUrl(fields);
+  return window.open(url, "_blank", "noopener,noreferrer");
+}
+
+/**
  * Open WhatsApp in a new tab (same behaviour as Btn with target="_blank").
  * @param {string} [serviceName]
  * @param {string} [customMessage]

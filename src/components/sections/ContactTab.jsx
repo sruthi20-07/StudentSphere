@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { PASTEL, WA, WHATSAPP_SEND_HINT } from "../../constants/config.js";
+import { PASTEL, WA, WHATSAPP_SEND_HINT, buildQuickEnquiryWhatsAppUrl, openQuickEnquiryWhatsApp } from "../../constants/config.js";
 import SectionHead from "../ui/SectionHead.jsx";
 import Card from "../ui/Card.jsx";
 import Btn from "../ui/Btn.jsx";
@@ -35,13 +35,58 @@ const FAQS = [
 
 export default function ContactTab() {
   const [form, setForm] = useState({ name: "", email: "", service: "", message: "" });
-  const [sent, setSent] = useState(false);
+  const [formError, setFormError] = useState("");
+  const [success, setSuccess] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const [openFaq, setOpenFaq] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSent(true);
-    setForm({ name: "", email: "", service: "", message: "" });
+    setFormError("");
+    setSuccess(false);
+
+    const name = form.name.trim();
+    const service = form.service.trim();
+    const message = form.message.trim();
+
+    if (!name) {
+      setFormError("Please enter your name.");
+      return;
+    }
+    if (!service) {
+      setFormError("Please enter the service you need.");
+      return;
+    }
+    if (!message) {
+      setFormError("Please describe your requirements.");
+      return;
+    }
+
+    setSubmitting(true);
+
+    const payload = {
+      name,
+      email: form.email.trim(),
+      service,
+      requirements: message,
+    };
+
+    window.setTimeout(() => {
+      const win = openQuickEnquiryWhatsApp(payload);
+
+      setSubmitting(false);
+
+      if (!win) {
+        const url = buildQuickEnquiryWhatsAppUrl(payload);
+        setFormError(
+          "Could not open WhatsApp. Please allow pop-ups for this site, or open this link manually: " + url
+        );
+        return;
+      }
+
+      setForm({ name: "", email: "", service: "", message: "" });
+      setSuccess(true);
+    }, 280);
   };
 
   return (
@@ -103,14 +148,14 @@ export default function ContactTab() {
           <p className="text-xs text-gray-500 mb-4">
             Fill this form — I&apos;ll reply on WhatsApp. No spam, ever.
           </p>
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-4" noValidate>
             <input
               type="text"
-              required
               placeholder="Your full name"
               value={form.name}
               onChange={(e) => setForm({ ...form, name: e.target.value })}
               className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-300"
+              autoComplete="name"
             />
             <input
               type="email"
@@ -118,10 +163,10 @@ export default function ContactTab() {
               value={form.email}
               onChange={(e) => setForm({ ...form, email: e.target.value })}
               className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-300"
+              autoComplete="email"
             />
             <input
               type="text"
-              required
               placeholder="What service do you need?"
               value={form.service}
               onChange={(e) => setForm({ ...form, service: e.target.value })}
@@ -129,22 +174,45 @@ export default function ContactTab() {
             />
             <textarea
               rows={4}
-              required
               placeholder="Tell me more about what you need..."
               value={form.message}
               onChange={(e) => setForm({ ...form, message: e.target.value })}
               className="w-full px-4 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-300 resize-none"
             />
-            {sent && (
+            {formError && (
+              <div
+                className="p-3 rounded-xl text-sm font-medium"
+                style={{ background: PASTEL.rose.light, color: PASTEL.rose.text }}
+              >
+                {formError}
+              </div>
+            )}
+            {success && (
               <div
                 className="p-3 rounded-xl text-sm font-medium"
                 style={{ background: PASTEL.green.light, color: PASTEL.green.text }}
               >
-                Thanks! I&apos;ll get back to you soon on WhatsApp. 💬
+                WhatsApp opened successfully. Press Send to continue.
               </div>
             )}
-            <Btn color={PASTEL.purple} variant="primary" fullWidth type="submit">
-              Send Message 🚀
+            <Btn
+              color={PASTEL.purple}
+              variant="primary"
+              fullWidth
+              type="submit"
+              className={submitting ? "opacity-80 pointer-events-none" : ""}
+            >
+              {submitting ? (
+                <span className="inline-flex items-center gap-2">
+                  <span
+                    className="inline-block w-4 h-4 border-2 border-white/40 border-t-white rounded-full animate-spin"
+                    aria-hidden
+                  />
+                  Opening WhatsApp…
+                </span>
+              ) : (
+                "Send Message 🚀"
+              )}
             </Btn>
           </form>
         </Card>
